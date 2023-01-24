@@ -36,15 +36,39 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title),),
-      body: Center(
-          child: ElevatedButton(
-            onPressed: () =>
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const NewPage())),
-            child: const Text("移動"),
-          )
+      appBar: AppBar(
+        title: const Text("Title"),
       ),
+      body: Column(
+         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children:[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const[
+           Text("Good",style: TextStyle(fontSize: 50, color: Colors.pinkAccent),),
+           Text("Morning",style: TextStyle(fontSize: 30, color: Colors.blueAccent),),
+        ],
+      ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const[
+              Text("Good", style: TextStyle(fontSize: 50,color: Colors.pinkAccent),),
+              Text("Morning", style: TextStyle(fontSize: 30,color: Colors.blueAccent),),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            textBaseline: TextBaseline.alphabetic,
+            children: const[
+              Text("Good",style: TextStyle(fontSize: 50,color: Colors.pinkAccent),),
+              Text("Morning", style: TextStyle(fontSize: 30,color: Colors.blueAccent),),
+            ],
+          ),
+      ]
+    ),
     );
   }
 }
