@@ -1,74 +1,59 @@
 import 'package:flutter/material.dart';
-import 'new_page.dart';
 
-void main() {
+
+
+void main(){
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
-      return MaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-      primarySwatch: Colors.blue,
-      visualDensity: VisualDensity.adaptivePlatformDensity,
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: "Flutter Demo Page"),
-
-      );
-
+      debugShowCheckedModeBanner: false,
+      home: const FlutterTask1(),
+    );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class FlutterTask1 extends StatelessWidget {
+  const FlutterTask1 ({Key?key}) : super(key:key);
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Title"),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
       ),
-      body: Column(
-         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children:[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const[
-           Text("Good",style: TextStyle(fontSize: 50, color: Colors.pinkAccent),),
-           Text("Morning",style: TextStyle(fontSize: 30, color: Colors.blueAccent),),
-        ],
-      ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: const[
-              Text("Good", style: TextStyle(fontSize: 50,color: Colors.pinkAccent),),
-              Text("Morning", style: TextStyle(fontSize: 30,color: Colors.blueAccent),),
-            ],
+        home: Scaffold(
+         appBar: AppBar(
+           backgroundColor: const Color(0xFF000000).withOpacity(0),
+         ),
+          body: SingleChildScrollView(
+             child: Column(
+               children: [
+                 Container(
+                 padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black12),
+              borderRadius: BorderRadius.circular(20),
+            ),
+                 ),
+                 Container(
+                   child: Image.asset("images/brazil.webp"),
+                 ),
+
+
+               ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            textBaseline: TextBaseline.alphabetic,
-            children: const[
-              Text("Good",style: TextStyle(fontSize: 50,color: Colors.pinkAccent),),
-              Text("Morning", style: TextStyle(fontSize: 30,color: Colors.blueAccent),),
-            ],
           ),
-      ]
-    ),
-    );
+          ),
+      );
   }
 }
