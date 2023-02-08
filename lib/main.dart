@@ -45,11 +45,9 @@ class FlutterTask1 extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
             ),
                  ),
-                 Container(
-                   child: Image.asset("images/brazil.webp"),
-                 ),
-
-
+                 Center(
+                     child: Image.asset("assets/brazil.png"),
+                   ),
                ],
           ),
           ),
